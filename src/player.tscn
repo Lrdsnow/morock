@@ -1,0 +1,32 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://src/level1-main/player/ben.tres" type="SpriteFrames" id=1]
+[ext_resource path="res://src/level1-main/player/bag.tres" type="SpriteFrames" id=2]
+[ext_resource path="res://src/level1-main/Scripts/player.gd" type="Script" id=3]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 19.7811, 47.5699 )
+
+[node name="player" type="KinematicBody2D"]
+position = Vector2( 1.06003, 1.34779 )
+scale = Vector2( 0.8, 0.8 )
+script = ExtResource( 3 )
+Ben = ExtResource( 1 )
+Bag = ExtResource( 2 )
+BagSize = Vector2( 19.781, 47.57 )
+BenSize = Vector2( 33.168, 57.807 )
+DefaultLocation = Vector2( 797.18, 336.111 )
+BenSpeed = 350.0
+BagSpeed = 550.0
+
+[node name="playerbody" type="AnimatedSprite" parent="."]
+frames = ExtResource( 2 )
+animation = "IdleRight"
+
+[node name="playercollison" type="CollisionShape2D" parent="."]
+position = Vector2( 1.12796, 2.51984 )
+shape = SubResource( 1 )
+
+[node name="Camera2D" type="Camera2D" parent="."]
+offset = Vector2( 0, -50 )
+current = true

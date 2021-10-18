@@ -1,0 +1,219 @@
+; Engine configuration file.
+; It's best edited using the editor UI and not directly,
+; since the parameters that go here are not all obvious.
+;
+; Format:
+;   [section] ; section goes between []
+;   param=value ; assign values to parameters
+
+config_version=4
+
+_global_script_classes=[ {
+"base": "",
+"class": "SteamAPI",
+"language": "NativeScript",
+"path": "res://addons/steam_api/steam_api.gdns"
+}, {
+"base": "",
+"class": "SteamCallback",
+"language": "NativeScript",
+"path": "res://addons/steam_api/steam_callback.gdns"
+}, {
+"base": "",
+"class": "SteamFriends",
+"language": "NativeScript",
+"path": "res://addons/steam_api/steam_friends.gdns"
+}, {
+"base": "",
+"class": "SteamId",
+"language": "NativeScript",
+"path": "res://addons/steam_api/steam_id.gdns"
+}, {
+"base": "",
+"class": "SteamLeaderboard",
+"language": "NativeScript",
+"path": "res://addons/steam_api/steam_leaderboard.gdns"
+}, {
+"base": "",
+"class": "SteamLeaderboardEntries",
+"language": "NativeScript",
+"path": "res://addons/steam_api/steam_leaderboard_entries.gdns"
+}, {
+"base": "",
+"class": "SteamLeaderboardEntry",
+"language": "NativeScript",
+"path": "res://addons/steam_api/steam_leaderboard_entry.gdns"
+}, {
+"base": "",
+"class": "SteamLeaderboardFindResult",
+"language": "NativeScript",
+"path": "res://addons/steam_api/steam_find_leaderboard_result.gdns"
+}, {
+"base": "",
+"class": "SteamLeaderboardScoreUploaded",
+"language": "NativeScript",
+"path": "res://addons/steam_api/steam_leaderboard_uploaded.gdns"
+}, {
+"base": "",
+"class": "SteamLeaderboardScoresDownloaded",
+"language": "NativeScript",
+"path": "res://addons/steam_api/steam_leaderboard_scores_downloaded.gdns"
+}, {
+"base": "",
+"class": "SteamUserStats",
+"language": "NativeScript",
+"path": "res://addons/steam_api/steam_user_stats.gdns"
+} ]
+_global_script_class_icons={
+"SteamAPI": "",
+"SteamCallback": "",
+"SteamFriends": "",
+"SteamId": "",
+"SteamLeaderboard": "",
+"SteamLeaderboardEntries": "",
+"SteamLeaderboardEntry": "",
+"SteamLeaderboardFindResult": "",
+"SteamLeaderboardScoreUploaded": "",
+"SteamLeaderboardScoresDownloaded": "",
+"SteamUserStats": ""
+}
+
+[application]
+
+config/name="Morock"
+run/main_scene="res://start.tscn"
+config/icon="res://src/main/img/morock.svg"
+
+[autoload]
+
+global="*res://src/global.gd"
+
+[debug]
+
+settings/crash_handler/message="Please Send This To Lrdsnow101@gmail.com"
+
+[display]
+
+window/per_pixel_transparency/allowed=true
+window/per_pixel_transparency/enabled=true
+window/stretch/mode="viewport"
+window/stretch/aspect="keep"
+
+[editor_plugins]
+
+enabled=PoolStringArray( "res://addons/water2d/plugin.cfg" )
+
+[input]
+
+ui_left={
+"deadzone": 0.5,
+"events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":16777231,"unicode":0,"echo":false,"script":null)
+, Object(InputEventJoypadButton,"resource_local_to_scene":false,"resource_name":"","device":0,"button_index":14,"pressure":0.0,"pressed":false,"script":null)
+, Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":65,"unicode":0,"echo":false,"script":null)
+ ]
+}
+ui_right={
+"deadzone": 0.5,
+"events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":16777233,"unicode":0,"echo":false,"script":null)
+, Object(InputEventJoypadButton,"resource_local_to_scene":false,"resource_name":"","device":0,"button_index":15,"pressure":0.0,"pressed":false,"script":null)
+, Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":68,"unicode":0,"echo":false,"script":null)
+ ]
+}
+ui_up={
+"deadzone": 0.5,
+"events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":16777232,"unicode":0,"echo":false,"script":null)
+, Object(InputEventJoypadButton,"resource_local_to_scene":false,"resource_name":"","device":0,"button_index":12,"pressure":0.0,"pressed":false,"script":null)
+, Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":87,"unicode":0,"echo":false,"script":null)
+ ]
+}
+ui_down={
+"deadzone": 0.5,
+"events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":16777234,"unicode":0,"echo":false,"script":null)
+, Object(InputEventJoypadButton,"resource_local_to_scene":false,"resource_name":"","device":0,"button_index":13,"pressure":0.0,"pressed":false,"script":null)
+, Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":83,"unicode":0,"echo":false,"script":null)
+ ]
+}
+run={
+"deadzone": 0.5,
+"events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":16777237,"unicode":0,"echo":false,"script":null)
+ ]
+}
+jump={
+"deadzone": 0.5,
+"events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":32,"unicode":0,"echo":false,"script":null)
+, Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":16777232,"unicode":0,"echo":false,"script":null)
+ ]
+}
+C1={
+"deadzone": 0.5,
+"events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":49,"unicode":0,"echo":false,"script":null)
+ ]
+}
+C2={
+"deadzone": 0.5,
+"events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":50,"unicode":0,"echo":false,"script":null)
+ ]
+}
+p2up={
+"deadzone": 0.5,
+"events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":87,"unicode":0,"echo":false,"script":null)
+, Object(InputEventJoypadMotion,"resource_local_to_scene":false,"resource_name":"","device":-1,"axis":1,"axis_value":-1.0,"script":null)
+ ]
+}
+p2down={
+"deadzone": 0.5,
+"events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":83,"unicode":0,"echo":false,"script":null)
+, Object(InputEventJoypadMotion,"resource_local_to_scene":false,"resource_name":"","device":-1,"axis":1,"axis_value":1.0,"script":null)
+ ]
+}
+p2left={
+"deadzone": 0.5,
+"events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":65,"unicode":0,"echo":false,"script":null)
+, Object(InputEventJoypadMotion,"resource_local_to_scene":false,"resource_name":"","device":-1,"axis":0,"axis_value":-1.0,"script":null)
+ ]
+}
+p2right={
+"deadzone": 0.5,
+"events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":68,"unicode":0,"echo":false,"script":null)
+, Object(InputEventJoypadMotion,"resource_local_to_scene":false,"resource_name":"","device":-1,"axis":0,"axis_value":1.0,"script":null)
+ ]
+}
+sprint={
+"deadzone": 0.5,
+"events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":16777237,"unicode":0,"echo":false,"script":null)
+ ]
+}
+walk={
+"deadzone": 0.5,
+"events": [  ]
+}
+crouch={
+"deadzone": 0.5,
+"events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":16777238,"unicode":0,"echo":false,"script":null)
+ ]
+}
+LMB={
+"deadzone": 0.5,
+"events": [  ]
+}
+pick_up={
+"deadzone": 0.5,
+"events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":69,"unicode":0,"echo":false,"script":null)
+, Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":70,"unicode":0,"echo":false,"script":null)
+, Object(InputEventMouseButton,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"button_mask":0,"position":Vector2( 0, 0 ),"global_position":Vector2( 0, 0 ),"factor":1.0,"button_index":1,"pressed":false,"doubleclick":false,"script":null)
+ ]
+}
+
+[physics]
+
+common/enable_pause_aware_picking=true
+
+[rendering]
+
+2d/snapping/use_gpu_pixel_snap=true
+vram_compression/import_etc=true
+vram_compression/import_etc2=false
+quality/depth_prepass/disable_for_vendors=""
+environment/default_clear_color=Color( 0, 0, 0, 1 )
+environment/default_environment="res://default_env.tres"
+quality/dynamic_fonts/use_oversampling=false
