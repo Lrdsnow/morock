@@ -30,4 +30,4 @@ func _on_ani_animation_finished(anim_name):
 
 
 func _on_fx_animation_finished(anim_name):
-	get_tree().change_scene("res://cs.tscn")
+	get_tree().change_scene("res://src/sc/sc.tscn")

@@ -4,6 +4,8 @@ extends Node2D
 # Declare member variables here. Examples:
 # var a = 2
 # var b = "text"
+export(bool) var moving = false
+export(Vector2) var moving_speed
 
 export(Vector2) var ap
 
@@ -23,8 +25,9 @@ func _ready():
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-#func _process(delta):
-#	pass
+func _process(delta):
+	if moving == true:
+		$player.position.x = $player.position.x + moving_speed.x
 
 
 func _on_npcarea_area_entered(area):
@@ -65,3 +68,8 @@ func _on_AnimationPlayer_animation_finished(anim_name):
 func _on_trigger2_body_entered(body):
 	if body.name == "player":
 		get_tree().change_scene("res://src/level2-main/level2.tscn")
+
+
+func _on_solid_body_entered(body):
+	if body.name == "player":
+		moving = false
