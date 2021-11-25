@@ -1,0 +1,13 @@
+[remap]
+
+importer="image"
+type="Image"
+path="res://.import/grass.jpg-10744571d9cc39fd83794d1f6d2c6c4d.image"
+
+[deps]
+
+source_file="res://src/level1-alt/img/grass.jpg"
+dest_files=[ "res://.import/grass.jpg-10744571d9cc39fd83794d1f6d2c6c4d.image" ]
+
+[params]
+
