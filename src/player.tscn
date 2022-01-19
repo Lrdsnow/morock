@@ -1,14 +1,52 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=15 format=2]
 
 [ext_resource path="res://src/level1-main/player/ben.tres" type="SpriteFrames" id=1]
 [ext_resource path="res://src/level1-main/player/bag.tres" type="SpriteFrames" id=2]
 [ext_resource path="res://src/level1-main/Scripts/player.gd" type="Script" id=3]
+[ext_resource path="res://src/mobile/arrowRog.jpg" type="Texture" id=4]
+[ext_resource path="res://src/mobile/ArrowU.jpg" type="Texture" id=5]
+[ext_resource path="res://src/mobile/arrowLog.jpg" type="Texture" id=6]
+[ext_resource path="res://src/temp/Oswald-Bold.ttf" type="DynamicFontData" id=7]
+[ext_resource path="res://src/level1-main/player/teddy.tres" type="SpriteFrames" id=8]
 
-[sub_resource type="RectangleShape2D" id=1]
+[sub_resource type="RectangleShape2D" id=27]
 extents = Vector2( 19.7811, 47.5699 )
 
+[sub_resource type="DynamicFont" id=33]
+size = 150
+use_mipmaps = true
+use_filter = true
+font_data = ExtResource( 7 )
+
+[sub_resource type="DynamicFont" id=34]
+size = 50
+use_mipmaps = true
+use_filter = true
+font_data = ExtResource( 7 )
+
+[sub_resource type="Animation" id=35]
+length = 0.5
+tracks/0/type = "value"
+tracks/0/path = NodePath("cover:self_modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
+}
+
+[sub_resource type="Gradient" id=36]
+colors = PoolColorArray( 0, 0, 0, 1, 0, 0, 0, 1 )
+
+[sub_resource type="GradientTexture" id=37]
+gradient = SubResource( 36 )
+
 [node name="player" type="KinematicBody2D"]
-position = Vector2( 1.06003, 1.34779 )
+position = Vector2( 455.02, 401.809 )
 scale = Vector2( 0.8, 0.8 )
 script = ExtResource( 3 )
 Ben = ExtResource( 1 )
@@ -20,13 +58,76 @@ BenSpeed = 350.0
 BagSpeed = 550.0
 
 [node name="playerbody" type="AnimatedSprite" parent="."]
-frames = ExtResource( 2 )
+frames = ExtResource( 8 )
 animation = "IdleRight"
 
 [node name="playercollison" type="CollisionShape2D" parent="."]
 position = Vector2( 1.12796, 2.51984 )
-shape = SubResource( 1 )
+shape = SubResource( 27 )
 
 [node name="Camera2D" type="Camera2D" parent="."]
 offset = Vector2( 0, -50 )
 current = true
+
+[node name="mobile" type="Node2D" parent="Camera2D"]
+
+[node name="L" type="TouchScreenButton" parent="Camera2D/mobile"]
+position = Vector2( -619.424, 147.678 )
+scale = Vector2( 0.483333, 0.4625 )
+normal = ExtResource( 6 )
+
+[node name="R" type="TouchScreenButton" parent="Camera2D/mobile"]
+position = Vector2( -455.674, 147.678 )
+scale = Vector2( 0.483333, 0.4625 )
+normal = ExtResource( 4 )
+
+[node name="J" type="TouchScreenButton" parent="Camera2D/mobile"]
+position = Vector2( 454.326, 113.928 )
+scale = Vector2( 0.489748, 0.461907 )
+normal = ExtResource( 5 )
+
+[node name="Morock" type="Label" parent="Camera2D"]
+self_modulate = Color( 1, 1, 1, 0 )
+margin_left = -225.783
+margin_top = -441.444
+margin_right = -73.7834
+margin_bottom = -366.444
+custom_fonts/font = SubResource( 33 )
+text = "Morock"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Morock2" type="Label" parent="Camera2D"]
+self_modulate = Color( 1, 1, 1, 0 )
+margin_left = -253.113
+margin_top = -355.253
+margin_right = 254.887
+margin_bottom = -280.253
+custom_fonts/font = SubResource( 34 )
+text = "Programmed By Lrdsnow"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Morock3" type="Label" parent="Camera2D"]
+self_modulate = Color( 1, 1, 1, 0 )
+margin_left = -282.544
+margin_top = -386.786
+margin_right = 350.456
+margin_bottom = -233.786
+custom_fonts/font = SubResource( 34 )
+text = "Story By SimonCoolCat64
+ And Lrdsnow."
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="fx" type="AnimationPlayer" parent="."]
+anims/fadein = SubResource( 35 )
+
+[node name="cover" type="Sprite" parent="."]
+visible = false
+position = Vector2( 37.701, 413.369 )
+scale = Vector2( 1.19571, 922.337 )
+texture = SubResource( 37 )
